@@ -4,3 +4,11 @@ plugins {
     id 'com.android.library' version '8.0.2' apply false
     id 'org.jetbrains.kotlin.android' version '1.8.20' apply false
 }
+
+apply from: 'config.gradle'
+
+//这是一个 Gradle 任务，用于在 Android 项目中清除构建目录。在 build.gradle 文件中，clean 任务的类型为 Delete，
+// 它会删除 rootProject.buildDir 目录下的所有文件 123
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
